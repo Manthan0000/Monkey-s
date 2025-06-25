@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Chat =  require("./models/user.js");
+const User =  require("./models/user.js");
 
 async function main() {
     await mongoose.connect("mongodb://127.0.0.1:27017/monkey");

@@ -8,6 +8,7 @@ const session = require("express-session");
 app.set('view engine', 'ejs');
 app.use(express.static('views'));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'views')));
 
 async function main(){
     await mongoose.connect("mongodb://127.0.0.1:27017/monkey");
@@ -23,7 +24,7 @@ app.listen(port, () => {
 
 //For the registration 
 app.get("/register", (req,res) => {
-    res.sendFile(path.join(__dirname, "views/homepage", "sign-up.html"));
+    res.sendFile(path.join(__dirname, "views/HTML", "sign-up.html"));
 });
 app.post("/register", async (req, res) => {
     let { email, password, confirm_password, dob } = req.body;
@@ -54,7 +55,7 @@ app.post("/register", async (req, res) => {
 
 //For the Login Procces
 app.get("/login", (req,res) => {
-    res.sendFile(path.join(__dirname, "views/homepage", "login.html"));
+    res.sendFile(path.join(__dirname, "views/HTML", "login.html"));
 });
 app.post("/login", async (req,res) => {
     const {email,password} = req.body;
@@ -66,3 +67,5 @@ app.post("/login", async (req,res) => {
         res.send("Invalid login");
     }
 });
+
+//For the Home Page
