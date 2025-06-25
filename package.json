@@ -1,0 +1,27 @@
+{
+  "name": "monkey-s",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manthan0000/Monkey-s.git"
+  },
+  "author": "manthan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manthan0000/Monkey-s/issues"
+  },
+  "homepage": "https://github.com/Manthan0000/Monkey-s#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.16.0",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7",
+    "session": "^0.1.0"
+  }
+}
