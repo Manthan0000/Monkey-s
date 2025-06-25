@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Monkey's</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3c8db2;
+            --secondary-color: #c9e1eb;
+            --accent-color: #f4f8fa;
+            --fourth-color: #fefffe;
+            --text-color: #000000;
+            --light-gray: #F7F9FC;
+            --dark-gray: #343A40;
+            --white: #FFFFFF;
+            --success-color: #2ECC71;
+            --warning-color: #F1C40F;
+            --error-color: #E74C3C;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            /* background-color: var(--secondary-color); */
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "shrikhand";
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--accent-color);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 1rem;
+            font-weight: 100;
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        header {
+            padding: 0px;
+            box-shadow: (--box-shadow);
+        }
+
+        .container-header {
+            display: flex;
+            background-color: var(--primary-color);
+            /* background: linear-gradient(var(--secondary-color),var(--primary-color)); */
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: var(--box-shadow);
+            /* border-bottom: #333 solid; */
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 80px;
+            /* height: 70px; */
+            margin-top: 6px;
+            border-radius: 50%;
+            object-fit: contain;
+            /* border-radius: 8px; */
+        }
+
+        .brand h2 {
+            justify-content: center;
+            color: #FFFFFF;
+            font-family: serif;
+            font-family: "shrikhand";
+            font-weight: 300;
+            font-size: 30px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            text-decoration: none;
+        }
+
+        .brand p {
+            font-family: "shrikhand";
+            color: #FFFFFF;
+            font-weight: 100;
+            margin-top: 0px;
+        }
+
+        .left .brand {
+            text-decoration: none;
+        }
+
+        .right {
+            flex-direction: column;
+            text-align: right;
+        }
+
+        .right-top button {
+            color: #FFFFFF;
+            background: local;
+            /* background: linear-gradient(var(--primary-color),var(--secondary-color)); */
+            font-weight: 700;
+            font-size: 30px;
+            font-family: "shrikhand";
+            border: 1px;
+            margin: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border-color: #000000;
+        }
+
+        .navbar {
+            align-items: center;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: "shrikhand";
+            font-weight: 100;
+            margin-bottom: 10px;
+        }
+
+        .about-hero {
+            height: 400px;
+            background-image: url('images/about-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            padding: 80px 0;
+        }
+
+        .about-section {
+            margin-bottom: 80px;
+        }
+
+        .about-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .mission-card,
+        .vision-card {
+            background-color: var(--light-background);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .mission-card i,
+        .vision-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .mission-card h3,
+        .vision-card h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+
+        }
+
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .team-member-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .team-member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .team-member-info h3 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .team-member-info .position {
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .team-member-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-member-social a {
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .team-member-social a:hover {
+            color: var(--primary-color);
+        }
+
+        .stats-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+            margin: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .navbar .active{
+            color: var(--secondary-color);
+            text-decoration: underline ;
+        }
+
+        /*block*/
+        .block {
+            color: var(--primary-color);
+            height: 50px;
+            width: 100%;
+            background-color: var(--primary-color);
+        }
+
+        /*footer*/
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            justify-content: center;
+            font-family: serif;
+            margin: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            margin-left: 50px;
+            justify-content: space-around;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            font-family: "shrikhand";
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 992px) {
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                height: 300px;
+            }
+
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                padding: 60px 0;
+            }
+
+            .about-section {
+                margin-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-header">
+            <div class="left">
+                <div class="logo">
+                    <a href="index.html"><img src="/images/logo.png" alt="logo"></a>
+                </div>
+                <div class="brand">
+                    <a href="index.html" class="brand">
+                        <h2>Monkey's</h2>
+                    </a>
+                    <p>since 2025</p>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="right-top">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                    <button class="menu-btn"><i class="fas fa-bars"></i></button>
+                    <button class="profile-btn"><i class="fas fa-user"></i></button>
+                </div>
+                <div>
+                    <nav class="navbar">
+                        <a href="bestseller.html">Best Seller</a>
+                        <a href="about.html" class="active">About</a>
+                        <a href="help.html">Help</a>
+                        <a href="contect.html">Contect</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <div class="about-hero">
+        <div class="about-hero-content">
+            <h1>About Monkey's fashion</h1>
+            <p>We're passionate about creating unforgettable fashion experiences that connect people with the world's
+                most amazing looks.</p>
+        </div>
+    </div>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-section">
+                <h2>Our Mission & Vision</h2>
+                <div class="mission-vision">
+                    <div class="mission-card">
+                        <i class="fas fa-compass"></i>
+                        <h3>Our Mission</h3>
+                        <p>To inspire and enable people to explore the world through authentic, sustainable, and
+                            transformative travel experiences that create lasting memories and positive impact.</p>
+                    </div>
+                    <div class="vision-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Our Vision</h3>
+                        <p>To be the world's leading adventure travel company, known for exceptional experiences,
+                            environmental stewardship, and cultural preservation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Sustainability</h3>
+                        <p>We're committed to minimizing our environmental impact and promoting responsible tourism
+                            practices.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Authenticity</h3>
+                        <p>We believe in providing genuine experiences that connect travelers with local cultures and
+                            communities.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Passion</h3>
+                        <p>Our love for adventure and exploration drives everything we do, inspiring our customers to
+                            discover the world.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Community</h3>
+                        <p>We foster meaningful connections between travelers, local communities, and our team members.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>10+</h3>
+                            <p>Years of Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>500+</h3>
+                            <p>Successful Trips</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>5000+</h3>
+                            <p>Happy Travelers</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>Destinations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-member-image">
+                            <img src="images/team2.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="team-member-info">
+                            <h3>Jiyansh Kalathiya</h3>
+                            <div class="position">Head of Operations</div>
+                            <p>Swastika ensures that every trip runs smoothly, bringing her extensive experience in
+                                logistics and customer service to our operations.</p>
+                            <div class="team-member-social">
+                                <a href="linkedin.com/in/swastika-saraogi-b3b47b358"><i class="fab fa-linkedin"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-image">
+                            <img src="images/team3.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="team-member-info">
+                            <h3>Manthan Jasoliya</h3>
+                            <div class="position">Lead Guide</div>
+                            <p>Manthan's passion for adventure and extensive knowledge of global destinations makes him
+                                an invaluable leader for our guided trips.</p>
+                            <div class="team-member-social">
+                                <a href="linkedin.com/in/manthan-jasoliya"><i class="fab fa-linkedin"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <!-- <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest adventures and exclusive offers</p>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div> -->
+    </section>
+
+    <div class="block"></div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Adventure Explorer</h3>
+                    <p>Discover the world with us. Your next adventure awaits.</p>
+                    <div class="social-icons">
+
+                        <a href="https://www.instagram.com/manthannn_28_?igsh=Ym50Y282cnVnMnJ2"><i
+                                class="fab fa-instagram"></i></a>
+
+                        <a href="https://www.youtube.com/@InvincibleNGOAhmedabad"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="trips.html">Trips</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>IIIT Vadodara, Gandhinagar India</p>
+                    <p><i class="fas fa-phone"></i>+91 84014 87213</p>
+                    <p><i class="fas fa-envelope"></i> jasoliya28072006@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Adventure Explorer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

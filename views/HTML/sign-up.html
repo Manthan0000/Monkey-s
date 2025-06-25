@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up-Page</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/CSS/sign-up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <main>
+        <div class="container">
+
+            <div class="left-side">
+                <img src="/images/logo.png" alt="logo">
+                    <h2>Monkey's : Shop now</h2>
+                    <form class="sign-up-form">
+                        <label>Email</label>
+                        <input type="email" placeholder="example@email.com" required>
+                        <label>Password</label>
+                        <input type="password" placeholder="Password" required>
+                        <label>Confirm Password</label>
+                        <input type="password" placeholder="Confirm Password" required>
+                        <label>Date of Birth</label>
+                        <input type="date" id="dob" name="dob" min="1960-01-01" max="2025-06-01" required>
+                        <button class="sign-up-btn" type="submit">Sign Up</button>
+                    </form>
+                    <div class="divider">or sign up with</div>
+                    <div class="social-login">
+                        <button class="google-login-btn"><i class="fab fa-google"></i></button>
+                        <button class="facebook-login-btn"><i class="fab fa-facebook"></i></button>
+                        <button class="apple-login-btn"><i class="fab fa-apple"></i></button>
+                    </div>
+                    <div class="signin-link">
+                        Have an account? <a href="login.html">Login</a>
+                    </div>
+                </div>
+
+            <div class="right-side">
+                <div class="hero-image">
+                    <img src="/images/login-image.jpeg" alt="shopping image">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
