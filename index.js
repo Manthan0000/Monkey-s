@@ -3,12 +3,18 @@ const mongoose = require("mongoose");
 const path = require('path');
 const app=express();
 const User = require("./models/user.js");
-const session = require("express-session");
+// const session = require("express-session");
 
 app.set('view engine', 'ejs');
 app.use(express.static('views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'views')));
+
+// app.use(session({
+//     secret: 'yourSecretKey', 
+//     resave: false,
+//     saveUninitialized: true
+// }));
 
 async function main(){
     await mongoose.connect("mongodb://127.0.0.1:27017/monkey");
@@ -32,11 +38,10 @@ app.post("/register", async (req, res) => {
     try {
         const existingUser = await User.findOne({ email: email });
         if (existingUser) {
-            console.log("User already exists. Redirecting to login.");
-            return res.redirect("/login"); 
-        }
-
-        const newuser = new User({
+            console.log("User already exists.");
+            res.redirect("/login");
+        }else{
+             const newuser = new User({
             email: email,
             password: password,
             confirm_password: confirm_password,
@@ -46,6 +51,7 @@ app.post("/register", async (req, res) => {
         await newuser.save();
         console.log("User registered successfully.");
         res.redirect("/"); 
+        }
 
     } catch (err) {
         console.error("Registration error:", err);
@@ -69,3 +75,15 @@ app.post("/login", async (req,res) => {
 });
 
 //For the Home Page
+app.post("/", async(req, res) => {
+    if(!req.session.user){
+        return res.redirect("/login");
+    }
+    res.sendFile(path.join(__dirname, "views/HTML", "index.html"));
+
+    const {jsonrpc , method , params ,id} = req.body;
+
+    if(method === "buy"){
+        
+    }
+});
